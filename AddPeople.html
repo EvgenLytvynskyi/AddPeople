@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+</head>
+<style>
+.conteiner{
+width: 250px;
+margin:auto;
+}
+</style>
+<body>
+<div class = 'conteiner'>
+<input type = 'text' class = 'usr'>
+<input type = 'button' value='ADD' class='add'>
+
+<br>
+<ul>
+
+</ul>
+</div>
+</body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+		
+		var People = (function(){
+		var people = [];
+	
+		var massCreate = function(a){
+		return people.push(a);
+		};
+	
+		var addRem = function(){
+		$('ul').html('');
+		for (i = 0; i<people.length; i++){
+		$('ul').append('<li>' + people[i] + '</li>');
+		};
+		$('li').on('click', function () {
+		var ind = $('li').index(this);    
+		people.splice(ind, 1);
+		addRem();
+		});
+		}
+		
+		var clickEv = function(){ 
+		$('.add').on('click', function(){
+   		massCreate($('.usr').val());
+   		addRem();
+   		});
+		}
+		
+		return{
+		clickEv:clickEv
+		};
+		})();
+				   		
+   		People.clickEv();
+   		
+   		var x = [];
+   		x[0] = 0;
+   		x[1] = 3;
+		x[2] = 6;
+
+   		
+   		var o = [];
+   		o[0] = 0;
+   		o[1] = 3;
+		o[2] = 6;
+
+   		
+   		//if (x==o){
+   		console.log(x);
+   		//}else{
+   		console.log(o);
+   		
+   		for(var i = 0; i <x.lendth; i++){
+       if (x[i] == o) //сравниваем элементы
+       console.log('ok');
+
+        
+    }
+   		
+   		//}
+   		
+  		</script>
+</html>
